@@ -2,19 +2,31 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package homeView;
+package firstnoel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author JulianFabic
  */
-public class HomeView extends javax.swing.JFrame {
+public class HomeView extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form HomeView
      */
     public HomeView() {
         initComponents();
+        addClient.addActionListener((ActionListener)this);
+        addEmployee.addActionListener((ActionListener)this);
+        genReport.addActionListener((ActionListener)this);
+        viewClientProf.addActionListener((ActionListener)this);
+        viewEmployee.addActionListener((ActionListener)this);
+    // End of variables declaration
     }
 
     /**
@@ -29,11 +41,11 @@ public class HomeView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        viewClientProf = new javax.swing.JButton();
+        addClient = new javax.swing.JButton();
+        viewEmployee = new javax.swing.JButton();
+        addEmployee = new javax.swing.JButton();
+        genReport = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,15 +71,15 @@ public class HomeView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setText("View Client Profile");
+        viewClientProf.setText("View Client Profile");
 
-        jButton2.setText("Add Client");
+        addClient.setText("Add Client");
 
-        jButton3.setText("View Employee Profile");
+        viewEmployee.setText("View Employee Profile");
 
-        jButton4.setText("Add Employee");
+        addEmployee.setText("Add Employee");
 
-        jButton5.setText("Generate Report");
+        genReport.setText("Generate Report");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -76,25 +88,25 @@ public class HomeView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(viewEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewClientProf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(genReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(viewClientProf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(addClient)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(viewEmployee)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(addEmployee)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(genReport)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -162,13 +174,92 @@ public class HomeView extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton addClient;
+    private javax.swing.JButton addEmployee;
+    private javax.swing.JButton genReport;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton viewClientProf;
+    private javax.swing.JButton viewEmployee;
     // End of variables declaration//GEN-END:variables
+    
+    public void actionPerformed(ActionEvent evt)
+	{
+              if(evt.getSource() == addClient)
+		{
+			System.out.print("s");
+			try {
+				GUIcs192 add_client = new GUIcs192();
+				add_client.setVisible(true);
+				this.setVisible(false);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				System.out.println("TEST");
+				e1.printStackTrace();
+			}
+			
+		
+		}
+            if(evt.getSource() == addEmployee)
+		{
+			System.out.print("s");
+			try {
+				AddEmployee add_employ = new AddEmployee();
+				add_employ.setVisible(true);
+				this.setVisible(false);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				System.out.println("TEST");
+				e1.printStackTrace();
+			}
+			
+		
+		}
+            if(evt.getSource() == genReport)
+		{
+			System.out.print("s");
+			try {
+				clientProfile client_prof = new clientProfile();
+				client_prof.setVisible(true);
+				this.setVisible(false);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				System.out.println("TEST");
+				e1.printStackTrace();
+			}
+			
+		
+		}
+            if(evt.getSource() == viewClientProf)
+		{
+			System.out.print("s");
+			try {
+				clientSummary client_sum = new clientSummary();
+				client_sum.setVisible(true);
+				this.setVisible(false);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				System.out.println("TEST");
+				e1.printStackTrace();
+			}
+			
+		
+		}
+            if(evt.getSource() == viewEmployee)
+		{
+			System.out.print("s");
+			try {
+				EmployeeProfile employ_prof = new EmployeeProfile();
+				employ_prof.setVisible(true);
+				this.setVisible(false);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				System.out.println("TEST");
+				e1.printStackTrace();
+			}
+			
+		
+		}
+        }
 }
